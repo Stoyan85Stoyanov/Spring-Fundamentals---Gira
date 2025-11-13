@@ -2,8 +2,14 @@ package bg.softuni.gira.entity;
 
 import bg.softuni.gira.entity.enums.ClassificationName;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "classifications")
 public class Classification extends BaseEntity {
 
@@ -17,25 +23,5 @@ public class Classification extends BaseEntity {
     public Classification(ClassificationName name, String description) {
         this.setName(name);
         this.setDescription(description);
-    }
-
-    public Classification() {
-
-    }
-
-    public ClassificationName getName() {
-        return name;
-    }
-
-    public void setName(ClassificationName name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }
