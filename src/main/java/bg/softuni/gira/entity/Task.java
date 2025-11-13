@@ -2,10 +2,14 @@ package bg.softuni.gira.entity;
 
 import bg.softuni.gira.entity.enums.Progress;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "tasks")
 public class Task extends BaseEntity {
 
@@ -31,52 +35,8 @@ public class Task extends BaseEntity {
     public Task() {
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Progress getProgress() {
-        return progress;
-    }
-
     public boolean setProgress(Progress progress) {
         this.progress = progress;
         return true;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public Classification getClassification() {
-        return classification;
-    }
-
-    public void setClassification(Classification classification) {
-        this.classification = classification;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }
