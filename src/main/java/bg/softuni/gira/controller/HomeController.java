@@ -2,16 +2,13 @@ package bg.softuni.gira.controller;
 
 import bg.softuni.gira.config.UserSession;
 import bg.softuni.gira.dto.TaskInfoDto;
-import bg.softuni.gira.entity.User;
 import bg.softuni.gira.service.TaskService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class HomeController {
