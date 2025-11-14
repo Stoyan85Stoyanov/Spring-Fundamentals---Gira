@@ -94,10 +94,6 @@ public class TaskService {
 
         Task mayBeTask = taskRepository.findById(id);
 
-//        if (mayBeTask.isEmpty()) {
-//            return;
-//        }
-
         if (mayBeTask.getProgress() == Progress.OPEN) {
             mayBeTask.setProgress(Progress.IN_PROGRESS);
             taskRepository.save(mayBeTask);
