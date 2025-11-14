@@ -21,7 +21,5 @@ public interface TaskRepository extends JpaRepository<Task, ClassificationName> 
     @Query("SELECT t FROM Task t")
     List<Task> findAllTasks();
 
-    Optional<Task> findByProgress(Progress progress);
-
     Task findById(Long id);
 }
