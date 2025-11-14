@@ -2,7 +2,6 @@ package bg.softuni.gira.controller;
 
 import bg.softuni.gira.config.UserSession;
 import bg.softuni.gira.dto.AddTaskDto;
-import bg.softuni.gira.entity.User;
 import bg.softuni.gira.repository.UserRepository;
 import bg.softuni.gira.service.TaskService;
 import bg.softuni.gira.service.UserService;
@@ -10,24 +9,19 @@ import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.Optional;
+
 
 @Controller
 public class TaskController {
 
     private final TaskService taskService;
     private final UserSession userSession;
-    private final UserService userService;
-    private final UserRepository userRepository;
 
-    public TaskController(TaskService taskService, UserSession userSession, UserService userService, UserRepository userRepository) {
+    public TaskController(TaskService taskService, UserSession userSession) {
         this.taskService = taskService;
         this.userSession = userSession;
-        this.userService = userService;
-        this.userRepository = userRepository;
     }
 
     @ModelAttribute("taskData")
